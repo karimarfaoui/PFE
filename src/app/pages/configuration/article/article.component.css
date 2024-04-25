@@ -1,0 +1,42 @@
+.heading{
+    color: rgba(233, 236, 239, .5);
+    margin-top: -2%;
+}
+.card{
+    background-color:#222e3c;
+    color: white;
+    border-radius: 10px;
+    margin-top: 7%;
+    width: 100%;
+}
+select{
+    width: 20%;
+    height:40px;
+    border-radius: 10px;
+    background-color: rgba(233, 236, 239, .5);
+}
+option{
+    
+    background-color: rgba(233, 236, 239, .5);
+}
+.input-group{
+    width: 40%;
+}
+
+/* Add custom styling for the keyboard if needed */
+.keyboard {
+    margin-top: 10px;
+  }
+  
+  .keyboard .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+  }
+  .footer button{
+    background-color: #6c767d;
+    font-weight: bold;
+    color: black;
+    
+
+  }

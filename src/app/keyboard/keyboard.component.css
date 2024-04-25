@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color:rgba(0, 0, 0, 0.1);
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    
+}
+
+/* SUBSCRIBE ==> https://www.youtube.com/albdev */
+/* SUBSCRIBE ==> https://www.youtube.com/albdev */
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    background-color:#222e3c;
+    border: none;
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: .3rem;
+    font-size: 1.3rem;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: .5rem;
+}
+.delete,
+.shift,
+.space {
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.delete { width: 100px; }
+.shift { width: 70px; }
+.space { width: 350px; }
+
+.textarea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+
+
+.upper { text-transform: uppercase; }
+
+/* SUBSCRIBE ==> https://www.youtube.com/albdev */
+/* SUBSCRIBE ==> https://www.youtube.com/albdev */

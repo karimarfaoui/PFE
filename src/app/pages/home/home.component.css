@@ -1,42 +1,4 @@
 
-.sidebar-toggle:hover .hamburger,.sidebar-toggle:hover .hamburger:after,.sidebar-toggle:hover .hamburger:before{
-    background:#3b7ddd}
-    .hamburger-right,.hamburger-right:after,.hamburger-right:before{
-        right:0}
-        a.list-group-item{text-decoration:none}
-   @media (max-width:767.98px){.navbar{width:100vw}} svg{color:#3b7ddd;height:24px;margin-left:-.15rem;margin-right:.375rem;margin-top:-.375rem;width:24px}.nav-flag,.nav-icon{color:#6c757d;display:block;font-size:1.5rem;line-height:1.4;padding:.1rem .8rem;transition:background .1s ease-in-out,color .1s ease-in-out}.nav-flag:after,.nav-icon:after{display:none!important}.nav-flag.active,.nav-flag:hover,.nav-icon.active,.nav-icon:hover{color:#3b7ddd}.nav-flag .feather,.nav-flag svg,.nav-icon .feather,.nav-icon svg{height:20px;width:20px}.nav-item .indicator{background:#3b7ddd;border-radius:50%;box-shadow:0 .1rem .2rem rgba(0,0,0,.05);color:#fff;display:block;font-size:.675rem;height:18px;padding:1px;position:absolute;right:-8px;text-align:center;top:0;transition:top .1s ease-out;width:18px}.nav-item:hover .indicator{top:-4px}.nav-item a:focus{outline:0}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){.navbar .avatar{max-height:47px}}@media (max-width:575.98px){.navbar{padding:.75rem}.nav-icon{padding:.1rem .75rem}.dropdown,.dropleft,.dropright,.dropup{position:inherit}.navbar-expand .navbar-nav .dropdown-menu-lg{min-width:100%}.nav-item .nav-link:after{display:none}}.nav-flag img{border-radius:50%;height:20px;-o-object-fit:cover;object-fit:cover;width:20px}.navbar input{direction:ltr}#root,body,html{height:100%}body{opacity:1!important;overflow-y:scroll}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){html{overflow-x:hidden}}.sidebar{direction:ltr;margin-top:120px;width: calc(100% - 85%); }.sidebar,.sidebar-content{background:#222e3c;transition:margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out}.sidebar-content{display:flex;flex-direction:column;height:104.6%}.sidebar-nav{flex-grow:1;list-style:none;margin-bottom:0;padding-left:0}.sidebar-link,a.sidebar-link{background:#222e3c;border-left:3px solid transparent;color:rgba(233,236,239,.5);cursor:pointer;display:block;font-weight:400;padding:.625rem 1.625rem;position:relative;text-decoration:none;transition:background .1s ease-in-out}.sidebar-link i,.sidebar-link svg,a.sidebar-link i,a.sidebar-link svg{color:rgba(233,236,239,.5);margin-right:.75rem}.sidebar-link:focus{outline:0}.sidebar-link:hover{background:#222e3c;border-left-color:transparent}.sidebar-link:hover,.sidebar-link:hover i,.sidebar-link:hover svg{color:rgba(233,236,239,.75)}.sidebar-item.active .sidebar-link:hover,.sidebar-item.active>.sidebar-link{background:linear-gradient(90deg,rgba(59,125,221,.1),rgba(59,125,221,.0875) 50%,transparent);border-left-color:#3b7ddd;color:#e9ecef}.sidebar-item.active .sidebar-link:hover i,.sidebar-item.active .sidebar-link:hover svg,.sidebar-item.active>.sidebar-link i,.sidebar-item.active>.sidebar-link svg{color:#e9ecef}.sidebar-brand{color:#f8f9fa;display:block;font-size:1.15rem;font-weight:600;padding:1.15rem 1.5rem}.sidebar-brand:hover{color:#f8f9fa;text-decoration:none}.sidebar-brand:focus{outline:0}.sidebar-toggle{cursor:pointer;display:flex;height:26px;width:26px}.sidebar.collapsed{margin-left:-260px}@media (min-width:1px) and (max-width:991.98px){.sidebar{margin-left:-260px}.sidebar.collapsed{margin-left:0}}.sidebar-toggle{margin-right:1rem}.sidebar-header{background:transparent;color:#ced4da;font-size:.75rem;padding:1.5rem 1.5rem .375rem}.sidebar-badge{position:absolute;right:15px;top:14px;z-index:1}.sidebar-cta-content{background:#2b3947;border-radius:.3rem;color:#e9ecef;margin:1.75rem;padding:1.5rem}
-img{
-    width: 200px;
-    display: flex;
-    justify-content:center;
-    
-    height: 120px;
-}
-.ok1{
-    border: 1px solid white; /* Change the color and thickness of the line */
-    margin: -1px 0;
-}
-.dropdown-menu{
-    background-color: #222e3c;
-    border: 1px solid #3b7ddd;
-    height: 100%;
-    width: 100%;
-}
-.sidebar-link:hover{
-    background: #3b7ddd;
-}
-li{
-    margin-top:15px ;
-}
-.ok{
-    border: 2px solid  #111111;
-    width: 100vh;
-}
-.main{width: 100%;
-    position:absolute;
-    
-    background-color: #222e3c;
-}
 
 .centered {
     position: absolute;
