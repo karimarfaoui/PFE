@@ -1,0 +1,73 @@
+.heading{
+    color: rgba(233, 236, 239, .5);
+    margin-top: -2%;
+}
+.card{
+    background-color:#222e3c;
+    color: white;
+    border-radius: 10px;
+    margin-top: 7%;
+    width: 100%;
+    height: 100%;
+}
+button{
+    background-color: #6c767d;
+    font-weight: bold;
+    color: black;
+    width:100%;
+    height:70px;
+
+}
+*{
+    font-size: 15px;
+}
+fieldset.scheduler-border {
+    border: #ffffff solid 1px;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+.text-on-pannel {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    margin-left: 20px;
+    padding: 3px 5px;
+    position: absolute;
+    margin-top: -47px;
+    border: 1px solid #337ab7;
+    border-radius: 8px;
+  }
+  
+  .panel {
+    /* for text on pannel */
+    margin-top: 27px !important;
+    border: #ffffff solid 1px;
+
+  }
+  
+  .panel-body {
+    padding-top: 30px;
+    padding-bottom:40px ;
+    border: #ffffff solid 1px;
+
+  }
+h3{
+    width: 14%;
+}
+td{
+    padding-top: 30px;
+    padding-bottom:20px ;
+    border: rgba(255, 255, 255,0.3) solid 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div label:hover{
+    cursor: pointer;
+}

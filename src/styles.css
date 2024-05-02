@@ -2,5 +2,7 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
+@import 'simple-keyboard/build/css/index.css';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

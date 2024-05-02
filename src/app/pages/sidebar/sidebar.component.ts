@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
 export class SidebarComponent {
   isLoggedIn: boolean = false;
   areItemsVisible: boolean = false;
+  areItemsVisible2: boolean = false;
 
   constructor(private loginService: LoginService) {}
 
@@ -26,5 +27,9 @@ export class SidebarComponent {
   authentification() {
     this.areItemsVisible = !this.areItemsVisible;
     console.log(this.areItemsVisible);
+  }
+  authentification2() {
+    this.areItemsVisible2 = !this.areItemsVisible2;
+    console.log(this.areItemsVisible2);
   }
 }

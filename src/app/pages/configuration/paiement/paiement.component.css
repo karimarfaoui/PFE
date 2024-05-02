@@ -1,0 +1,43 @@
+.heading{
+    color: rgba(233, 236, 239, .5);
+    margin-top: -2%;
+}
+.card{
+    background-color:#222e3c;
+    color: white;
+    border-radius: 10px;
+    margin-top: 7%;
+    width: 100%;
+}
+.text-on-pannel {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    margin-left: 20px;
+    padding: 3px 5px;
+    position: absolute;
+    margin-top: -47px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+  }
+  
+  .panel {
+    /* for text on pannel */
+    margin-top: 10% !important;
+    font-size: 30px;
+}
+  
+  .panel-body {
+    padding-top: 30px !important;
+  }
+.fildeset label{
+    margin: 10px;
+}
+.double label{
+    margin: 10px;
+}
+.footer button{
+    background-color: #6c767d;
+    font-weight: bold;
+    color: black;
+    margin-bottom:20px;
+  }

@@ -1,0 +1,107 @@
+<span class="d-flex justify-content-center  heading fs-1">Fiche mode de réglement</span>
+<div class="box container">
+    <div class="card px-3 pt-3">
+        <!-- News block -->
+        <div class=" d-flex justify-content-center">
+          <!-- Featured image -->
+          <div class="hover-overlay shadow-1-strong ripple d rounded-5 mb-4" data-mdb-ripple-color="light">
+            <div class="inputAria">
+                <div>
+                    
+                  <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                          <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Code</span>
+                          </div>
+                        <input [(ngModel)]="newData.code_paiment" name="code_paiment" type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                     </div>
+                  <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" style="background-color: #6c767d;" id="inputGroup-sizing-default">Libelle</span>
+                    </div>
+                    <input type="text" [(ngModel)]="newData.libelle_paiment" name="libelle_paiment" class="form-control" aria-label="Default" style="background-color: #6c767d;" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                </div>
+                <br>
+                <hr />
+                <div class="container">
+                    <div class="panel panel-primary">
+                      <div class="panel-body">
+                        <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Type réglement </strong></h3>
+                       <div class="d-flex justify-content-between align-items-center fildeset">
+                        <div class="form-check form-switch d-flex align-items-center">
+                          <input class="form-check-input" [(ngModel)]="newData.type_reglement_espece" name="type_reglement_espece"  type="checkbox" id="Espece">
+                          <label class="form-check-label" for="Espece">Espéce</label>
+                        </div>
+                        <div class="form-check form-switch  d-flex align-items-center">
+                          <input class="form-check-input" type="checkbox" id="CarteCredit">
+                          <label class="form-check-label" [(ngModel)]="newData.type_reglement_carte_credit" name="type_reglement_carte_credit" for="flexSwitchCheckDefault">Carte Crédit</label>
+                        </div>
+                        <div class="form-check form-switch  d-flex align-items-center">
+                          <input class="form-check-input" [(ngModel)]="newData.type_reglement_carte" name="type_reglement_carte" type="checkbox" id="Carte">
+                          <label class="form-check-label" for="Carte">Carte</label>
+                        </div>
+                       </div>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center fildeset">
+                          <div class="form-check form-switch  d-flex align-items-center">
+                            <input class="form-check-input" [(ngModel)]="newData.type_reglement_credit" name="type_reglement_credit" type="checkbox" id="CarteCredit">
+                            <label class="form-check-label" for="CarteCredit">Crédit</label>
+                          </div>
+                          <div class="form-check form-switch  d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" id="Cheque">
+                            <label class="form-check-label" [(ngModel)]="newData.type_reglement_cheque" name="type_reglement_cheque" for="cheque">Chéque</label>
+                          </div>
+                          <div class="form-check form-switch  d-flex align-items-center">
+                            <input class="form-check-input" [(ngModel)]="newData.type_reglement_offre" name="type_reglement_offre" type="checkbox" id="Offre">
+                            <label class="form-check-label"  for="Offre">Offre</label>
+                          </div>
+                        </div>
+                        <br>
+                        <hr />
+                        <div class="container d-flex justify-content-between">
+                          <div class="panel panel-primary">
+                            <div class="panel-body double">
+                              <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Double ticket </strong></h3>
+                              <div class="form-check form-switch  d-flex align-items-center">
+                                <input class="form-check-input" [(ngModel)]="newData.double_ticket" type="checkbox" id="Oui">
+                                <label class="form-check-label" for="Oui">Oui</label>
+                              </div> 
+                            </div>
+                          </div>
+                          <div class="panel panel-primary ">
+                            <div class="panel-body double">
+                              <h3 class="text-on-pannel text-primary"><strong class="text-uppercase">A rendre</strong></h3>
+                              <div class="form-check form-switch  d-flex align-items-center">
+                                <input class="form-check-input" [(ngModel)]="newData.sans_a_rendre" type="checkbox" id="Sans">
+                                <label class="form-check-label" for="Sans">Sans</label>
+                              </div>
+                              <div class="form-check form-switch  d-flex align-items-center">
+                                <input class="form-check-input" [(ngModel)]="newData.avoir_a_rendre" type="checkbox" id="Avoir">
+                                <label class="form-check-label" for="Avoir">Avoir</label>
+                              </div>
+                              <div class="form-check form-switch  d-flex align-items-center">
+                                <input class="form-check-input" [(ngModel)]="newData.espece_a_rendre" type="checkbox" id="Esp">
+                                <label class="form-check-label" for="Esp">Espèce</label>
+                              </div>
+                            </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                    </div>
+        </div>
+        </div>
+    </div>
+    
+</div>
+   
+          <hr />
+          <div class="btn-group footer d-flex justify-content-around"  role="group" aria-label="Basic outlined example">
+            <button type="button" class="bi bi-info-circle-fill btn ms-1 style-button">Aide</button>
+            <button type="button" class="bi bi-floppy2-fill btn ms-1 style-button" (click)="createData()">Enregister</button>
+            <button type="button" class="bi bi-keyboard-fill btn ms-1 style-button" (click)="openDialog()">Clavier</button>
+            <button type="button" class="bi bi-trash-fill btn ms-1 style-button" (click)="reset()">Supprimer</button>
+            <button type="button" class="bi bi-ticket-detailed-fill btn ms-1 style-button">Ticker</button>
+            <button type="button" class="bi bi-x-circle-fill btn ms-1 style-button">fermer</button>
+          </div>
+</div>

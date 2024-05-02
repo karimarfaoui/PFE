@@ -54,8 +54,8 @@
           <li class="sidebar-item">
             
           </li>
-          <li class="sidebar-item">
-              <a class="sidebar-link" href="pages-sign-up.html">
+          <li class="sidebar-item" (click)="authentification2()">
+              <a class="sidebar-link">
                <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                       <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
@@ -63,6 +63,15 @@
                     </svg>
                     
         Parametres</span>
+        <ul *ngIf="areItemsVisible2">
+          <a class="sidebar-link bi bi-phone " routerLink="ficheparametre">
+              Fiche Parametres
+          </a>
+          <a class="sidebar-link bi bi-tv" routerLink="parameterdeconnexion">
+              Parametres de Connexion
+          </a>
+    </ul>
+        
   </a>
           </li>
           <li class="sidebar-item" (click)="authentification()">
@@ -75,11 +84,11 @@
                         <ul *ngIf="areItemsVisible">
                               <a class="sidebar-link bi bi-phone " routerLink="article">
                                   Article
-                              </a >
+                              </a>
                               <a class="sidebar-link bi bi-tv">
                                   Ecran
                               </a>
-                              <a class="sidebar-link bi bi-cash-stack">
+                              <a class="sidebar-link bi bi-cash-stack" routerLink="paiement">
                                   Paiement
                               </a>
                               <a class="sidebar-link bi bi-chat-dots">
@@ -95,6 +104,15 @@
                        
               </a>
           </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" routerLink="client">
+  <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+    </svg>
+      Client</span>
+</a>
+        </li>
           <li class="sidebar-item">
               <a class="sidebar-link" href="pages-sign-up.html">
                <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">

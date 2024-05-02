@@ -1,0 +1,153 @@
+<span class="d-flex justify-content-center  heading fs-1">Fiche Client</span>
+<div class="box container">
+    <div class="card px-3 pt-3">
+        <div class="row">
+            <div class="col">
+              <!-- Name input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="number"  [(ngModel)]="newData.code_client" id="CodeClient" class="form-control" />
+                <label class="form-label" for="CodeClient">Code Client</label>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="email" [(ngModel)]="newData.client_name" id="client" class="form-control" />
+                <label class="form-label" for="client">Client</label>
+              </div>
+            </div>
+          </div>
+          
+          <hr />
+          
+          <div class="row">
+            <div class="col">
+              <!-- Name input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" [(ngModel)]="newData.client_address" id="Adresse" class="form-control" />
+                <label class="form-label" for="adresse">Adresse</label>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Name input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" [(ngModel)]="newData.client_ville" id="ville" class="form-control" />
+                <label class="form-label" for="ville">Ville</label>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="email" [(ngModel)]="newData.client_email" id="email" class="form-control" />
+                <label class="form-label" for="emaili">Email</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">
+              <!-- Name input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" [(ngModel)]="newData.client_ob" id="observation" class="form-control" />
+                <label class="form-label" for="observation">Observation</label>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Name input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="tel" [(ngModel)]="newData.client_tel" placeholder="+216" id="Tél" class="form-control" />
+                <label class="form-label" for="Tél">Tél</label>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline">
+                  <input type="tel" [(ngModel)]="newData.client_fax" id="form8Example5" class="form-control" />
+                  <label class="form-label" for="form8Example5">Fax</label>
+                </div>
+              </div>
+            <div class="col">
+              <!-- Name input -->
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" [(ngModel)]="newData.client_mf" id="MF" class="form-control" />
+                <label class="form-label" for="MF">MF</label>
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="row">
+            <div class="col">
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline">
+                  <input type="date" [(ngModel)]="newData.client_date" id="date" class="form-control" />
+                  <label class="form-label" for="date">Date Validité</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-switch switch">
+                    <input class="form-check-input" [(ngModel)]="newData.bloque" type="checkbox" id="bloque">
+                    <label class="form-check-label" for="bloque">Bloqué</label>
+                  </div>
+              </div>
+          </div>
+
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Type de carte</legend>
+        <div class="control-group check">
+            <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_carte" type="checkbox" id="">
+                <label class="form-check-label" for="Sans">Sans</label>
+              </div>
+              <div class="form-check form-switch switch ">
+                <input class="form-check-input" [(ngModel)]="newData.type_fidelite" type="checkbox" id="remise">
+                <label class="form-check-label" for="remise">Fidélité Remise</label>
+              </div>
+              <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_credit" type="checkbox" id="crédit">
+                <label class="form-check-label" for="crédit">Crédit</label>
+              </div>
+              <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_prix2" type="checkbox" id="Prix2">
+                <label class="form-check-label" for="Prix2">Prix 2</label>
+              </div>
+              <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_fidelete_point" type="checkbox" id="fidélitépoints">
+                <label class="form-check-label" for="fidélitépoints">Fidélité Points</label>
+              </div>
+              <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_type7" type="checkbox" id="type7">
+                <label class="form-check-label" for="type7">Type 7</label>
+              </div>
+              <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_type8" type="checkbox" id="type8">
+                <label class="form-check-label" for="type8">Type 8</label>
+              </div>
+              <div class="form-check form-switch switch">
+                <input class="form-check-input" [(ngModel)]="newData.type_vente" type="checkbox" id="ventelot">
+                <label class="form-check-label" for="ventelot">Vente Lot</label>
+              </div>
+        </div>
+        <div class="input-footer">
+            <div data-mdb-input-init class="form-outline">
+                <input type="number" [(ngModel)]="newData.type_solde" placeholder="0,000" id="solde" class="form-control" />
+                <label class="form-label" for="solde">Solde</label>
+              </div>
+              <div data-mdb-input-init class="form-outline">
+                <input type="number" [(ngModel)]="newData.type_ancien_solde" placeholder="0,000" id="anciensolde" class="form-control" />
+                <label class="form-label" for="anciensolde">Ancien solde</label>
+              </div>
+        </div>
+    </fieldset>
+    <div class="btn-group footer d-flex justify-content-around"  role="group" aria-label="Basic outlined example">
+        <button type="button" class="bi bi-info-circle-fill btn ms-1 style-button">Aide</button>
+        <button type="button" class="bi bi-floppy2-fill btn ms-1 style-button" (click)="create()">Enregister</button>
+        <button type="button" class="bi bi-keyboard-fill btn ms-1 style-button" (click)="openDialog()">Clavier</button>
+        <button type="button" class="bi bi-trash-fill btn ms-1 style-button" >Supprimer</button>
+        <button type="button" class="bi bi-clock-fill btn ms-1 style-button">Historique</button>
+        <button type="button" class="bi bi-x-circle-fill btn ms-1 style-button">fermer</button></div>
+</div>
+</div>
