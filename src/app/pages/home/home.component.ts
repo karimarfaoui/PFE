@@ -1,4 +1,3 @@
-import { LoginService } from './../../login.service';
 
 import { CommonModule, NgIf } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild,} from '@angular/core';

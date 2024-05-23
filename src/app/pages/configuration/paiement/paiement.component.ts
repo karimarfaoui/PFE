@@ -25,6 +25,7 @@ import { error } from 'console';
   ]
 })
 export class PaiementComponent implements OnInit{
+  
   code_paiment:number=0;
   libelle_paiment:string="";
   type_reglement_espece:boolean=false;

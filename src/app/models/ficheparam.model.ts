@@ -1,0 +1,39 @@
+// src/app/models/fiche-param.model.ts
+export interface FicheParam {
+    entete1: string;
+    entete2: string;
+    entete3: string;
+    basePage1: string;
+    basePage2: string;
+    codePV: string;
+    masqueCte: string;
+    nComAfficheur: string;
+    nComTitle: string;
+    tauxTVA: number;
+    heureFermeture: string;
+    timbre: string;
+    nombreDecimal: number;
+    startTime: string;
+    montantPour1Point: number;
+    nbrePointMin: number;
+    valPoint: number;
+    afficheur: boolean;
+    offreRapFinance: boolean;
+    tableObligatoire: boolean;
+    duplicateTicket: boolean;
+    categorie: boolean;
+    logo: boolean;
+    ticketObligatoire: boolean;
+    talon: boolean;
+    ficheClient: boolean;
+    tva: boolean;
+    affRapportRap: boolean;
+    codeWifi: boolean;
+    pager: boolean;
+    ruptureTicket: boolean;
+    offreArticle: boolean;
+    rapportFinance: string;
+    tickBalance: string;
+    balance: string;
+  }
+  

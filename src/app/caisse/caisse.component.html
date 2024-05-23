@@ -1,0 +1,191 @@
+<span class="d-flex justify-content-center heading fs-1">Caisse</span>
+<div class="d-flex all">
+  <table
+    class="table table-responsive-sm custom-table table-bordered"
+    ngSkipHydration
+  >
+    <thead>
+      <tr>
+        <th colspan="6">
+          <p class="fs-3 text-secondary">Noveau Ticket :</p>
+          <div class="display">{{ getTotalCost() }} <br><hr /> <p class="sousTotal">{{this.sousTotal}}</p></div>
+          
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>
+        <!-- Span across all columns -->
+        <div class="scrollable-content">
+          <table class="table table-bordered">
+            <tr>
+              <th scope="col">designation</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Prix</th>
+              <th scope="col">Total</th>
+              <th scope="col">Delete</th>
+            </tr>
+            <tr *ngFor="let article of articlesID; let i = index">
+              <td>{{ article.designation }}</td>
+              <td>{{ quantities[i] }}</td>
+              <td>{{ article.prixDeVente1 }}</td>
+              <td>{{calculateSubtotal(quantities[i] , article.prixDeVente1)}}</td>
+              <button type="button" class="btn btn-light btn-rounded" data-mdb-ripple-init (click)="deleteItem(i)"><i class="bi bi-trash3-fill"></i></button>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <tr>
+        <td colspan="4"></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="sections">
+            <div class="calculator">
+              <div class="display">{{ displayValue }}</div>
+              <button (click)="setActive('Cash')" [ngClass]="{'active': activeButton === 'Cash'}" class="btn" (click)="onButtonPress('Cash')">Cash</button>
+
+              <button class="btn" (click)="setActive('TPE')" [ngClass]="{'active': activeButton === 'TPE'}" (click)="onButtonPress('TPE')">TPE</button>
+              
+
+              <button class="btn" (click)="onButtonPress('1')">1</button>
+              <button class="btn" (click)="onButtonPress('2')">2</button>
+              <button class="btn" (click)="onButtonPress('3')">3</button>
+
+              <button class="btn op" (click)="onButtonPress('+')">+</button>
+              <button class="btn" (click)="getTicket()">
+                Liste Ticket
+              </button>
+              <button class="btn" (click)="setActive('BonAchat')" [ngClass]="{'active': activeButton === 'BonAchat'}" (click)="onButtonPress('BonAchat')">
+                Bon Achat
+              </button>
+
+              <button class="btn"  (click)="onButtonPress('4')">4</button>
+              <button class="btn" (click)="onButtonPress('5')">5</button>
+              <button class="btn" (click)="onButtonPress('6')">6</button>
+              <button class="btn op" (click)="onButtonPress('-')">-</button>
+              <button class="btn" (click)="sousTotalDiscounted()">
+                Sous Total
+              </button>
+              <button class="btn" (click)="ClientPop()">Client</button>
+
+              <button class="btn" (click)="onButtonPress('7')">7</button>
+              <button class="btn" (click)="onButtonPress('8')">8</button>
+              <button class="btn" (click)="onButtonPress('9')">9</button>
+              <button class="btn op" (click)="onButtonPress('*')">*</button>
+              <button class="btn" (click)="openDiscountOptions()">Remise </button>
+              <button class="btn" (click)="resetTable()">
+                Annule ticket
+              </button>
+
+              <button class="btn" (click)="onButtonPress('C')">C</button>
+              <button class="btn" (click)="onButtonPress('0')">0</button>
+              <button class="btn" (click)="onButtonPress('=')">=</button>
+              <button class="btn op" (click)="onButtonPress('Annuler')"><i class="bi bi-backspace"></i></button>
+
+              <button class="btn" (click)="onButtonPress('OK')">OK</button>
+
+              <button class="btn" (click)="checkExistence()"><i class="bi bi-x-octagon-fill"></i>
+                Exist</button>
+          
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Data Display Table -->
+  <div class="scrollable-content-article">
+    <table
+      class="table table-dark table-responsive-sm custom-table"
+      ngSkipHydration
+    >
+      <thead class="thead-dark">
+        <tr>
+          <th colspan="6">
+            <div class="container-fluid">
+              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <button class="nav-link" (click)="smartphoneClick()">
+                          <i class="bi bi-phone-fill"></i> Smartphone
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="nav-link" (click)="aripodClick()">
+                          <i class="bi bi-bag-fill"></i> Accessoire
+                        </button>
+                      </li>
+                     
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th scope="col">Code Produit</th>
+          <th scope="col">designation</th>
+          <th scope="col">group</th>
+          <th scope="col">prix De Vente 1</th>
+          <th scope="col">prix De Vente 2</th>
+          <th scope="col">Acheter</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="smartphone || airpod">
+        <tr *ngFor="let article of articles; let i = index" class="showw">
+          <td>{{ article.codeProduit }}</td>
+          <td>{{ article.designation }}</td>
+          <td>{{ article.groupe }}</td>
+          <td>{{ article.prixDeVente1 }}</td>
+          <td>{{ article.prixDeVente2 }}</td>
+          <td>
+            <button
+              class="btn btn-outline-primary bi bi-cart-plus"
+              (click)="addToCart(article.id || 0)"
+            ></button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="d-flex justify-content-end" *ngIf="smartphone || airpod  ">
+          <button
+            class="btn btn-primary payment-button"
+            (click)="showReceipt()"
+          >
+            <i class="bi bi-cash"></i> Payment
+          </button>
+        </tr>
+      </tfoot>
+    </table>
+    <div *ngIf="client" class="card">
+      <div class="card-header">
+        <p class="fs-3">Client Details</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Code Client:</strong> {{ client.code_client }}</li>
+        <li class="list-group-item"><strong>Name:</strong> {{ client.client_name }}</li>
+        <li class="list-group-item"><strong>Address:</strong> {{ client.client_addresse }}</li>
+        <li class="list-group-item"><strong>City:</strong> {{ client.client_ville }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ client.client_email }}</li>
+        <li class="list-group-item"><strong>Telephone:</strong> {{ client.client_tel }}</li>
+        <li class="list-group-item"><strong>Solde:</strong>{{client.type_solde}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

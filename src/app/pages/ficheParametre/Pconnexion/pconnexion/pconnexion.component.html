@@ -10,7 +10,7 @@
                         <button type="button" class="bi bi-check-square-fill btn ms-1 style-button" (click)="onSubmit()">Valider</button>
                      
                     </div>
-                    <div class="col"><button type="button" class="bi bi-keyboard btn ms-1 style-button" (click)="openDialog()">Clavier</button>
+                    <div class="col"><button type="button" class="bi bi-keyboard btn ms-1 style-button" (click)="openDialog('nomServeurCaisse')">Clavier</button>
                     </div>
                     <div class="col"><button type="button" class="bi bi-camera-video-fill btn ms-1 style-button">Cam Connecte</button></div>
                     <div class="col"><button type="button" class="bi bi-x-circle-fill btn ms-1 style-button">fermer</button>
@@ -22,21 +22,21 @@
                     <div class="col">
                       <!-- Name input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="number" id="NomServeur" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue1" (click)="openDialog('nomServeurCaisse')" id="NomServeur" class="form-control" />
                         <label class="form-label" for="NomServeur">Nom Serveur Caisse</label>
                       </div>
                     </div>
                     <div class="col-2">
                       <!-- Email input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="number" id="port" class="form-control" />
+                        <input type="number" [(ngModel)]="this.displayValue2" (click)="openDialog('port')" id="port" class="form-control" />
                         <label class="form-label" for="port">Port</label>
                       </div>
                     </div>
                     <div class="col">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="number" id="NomBase" class="form-control" />
+                          <input type="text" [(ngModel)]="this.displayValue3" (click)="openDialog('nomBase')" id="NomBase" class="form-control" />
                           <label class="form-label" for="NomBase">Nom Base</label>
                         </div>
                       </div>
@@ -46,28 +46,29 @@
                     <div class="col">
                       <!-- Name input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="NomServeurAvance" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue4" (click)="openDialog('nomServeurAvance')" id="NomServeurAvance" class="form-control" />
                         <label class="form-label" for="NomServeurAvance">Nom Serveur Avance</label>
                       </div>
                     </div>
                     <div class="col">
                       <!-- Email input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="NomBaseAvance" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue5" (click)="openDialog('nomBaseAvance')"
+                         id="NomBaseAvance" class="form-control" />
                         <label class="form-label" for="NomBaseAvance">Nom Base Avance</label>
                       </div>
                     </div>
                     <div class="col">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="NomServeurClient" class="form-control" />
+                          <input type="text" [(ngModel)]="this.displayValue6" (click)="openDialog('nomServeurClient')" id="NomServeurClient" class="form-control" />
                           <label class="form-label" for="NomServeurClient">Nom Serveur Client</label>
                         </div>
                       </div>
                       <div class="col">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="NomBaseClient" class="form-control" />
+                          <input type="text" [(ngModel)]="this.displayValue7" (click)="openDialog('nomBaseClient')" id="NomBaseClient" class="form-control" />
                           <label class="form-label" for="NomBaseClient">Nom Base Client</label>
                         </div>
                       </div>
@@ -77,50 +78,44 @@
                     <div class="col-2">
                       <!-- Name input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="NomServeurAvoir" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue8" (click)="openDialog('nomServeurAvoir')"  id="NomServeurAvoir" class="form-control" />
                         <label class="form-label" for="NomServeurAvoir">Nom Serveur Avoir</label>
                       </div>
                     </div>
                     <div class="col-2">
                       <!-- Email input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="NomBaseFacture" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue9" (click)="openDialog('nomBaseFacture')" id="NomBaseFacture" class="form-control" />
                         <label class="form-label" for="NomBaseFacture">Nom Base Facture</label>
                       </div>
                     </div>
                     <div class="col-2">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="NomServeurFacture" class="form-control" />
+                          <input type="text" [(ngModel)]="this.displayValue10" (click)="openDialog('nomServeurFacture')" id="NomServeurFacture" class="form-control" />
                           <label class="form-label" for="NomServeurFacture">Nom Serveur Facture</label>
                         </div>
                       </div>
+                     
                       <div class="col-2">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="NomBaseFacture" class="form-control" />
-                          <label class="form-label" for="NomBaseFacture">Nom Base Facture</label>
-                        </div>
-                      </div>
-                      <div class="col-2">
-                        <!-- Name input -->
-                        <div data-mdb-input-init class="form-outline">
-                          <input type="number" id="IPServeur" class="form-control" />
+                          <input type="number"  [(ngModel)]="this.displayValue11" (click)="openDialog('ipServeurFloture')" id="IPServeur" class="form-control" />
                           <label class="form-label" for="IPServeur">IP Serveur Floture</label>
                         </div>
                       </div>
                       <div class="col-1">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="number" id="IPServeur" class="form-control" />
-                          <label class="form-label" for="IPServeur">Num Caisse</label>
+                          <input type="number" [(ngModel)]="this.displayValue12" (click)="openDialog('numCaisse')" id="numCaisse" class="form-control" />
+                          <label class="form-label" for="numcaisse">Num Caisse</label>
                         </div>
                       </div>
                       <div class="col-1">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="number" id="IPServeur" class="form-control" />
-                          <label class="form-label" for="IPServeur">Code Dèpot</label>
+                          <input type="number" [(ngModel)]="this.displayValue13" (click)="openDialog('codeDepot')" id="codeDepot" class="form-control" />
+                          <label class="form-label" for="codeDepot">Code Dèpot</label>
                         </div>
                       </div>
                   </div>
@@ -129,28 +124,28 @@
                     <div class="col">
                       <!-- Name input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="ModuleBalance" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue14" (click)="openDialog('moduleBalance')" id="ModuleBalance" class="form-control" />
                         <label class="form-label" for="ModuleBalance">Module Balance</label>
                       </div>
                     </div>
                     <div class="col">
                       <!-- Email input -->
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="CheminBalance" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue15" (click)="openDialog('cheminBalance')" id="CheminBalance" class="form-control" />
                         <label class="form-label" for="CheminBalance">Chemin Balance</label>
                       </div>
                     </div>
                     <div class="col">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="ImpressionAutomatique" class="form-control" />
+                          <input type="text" [(ngModel)]="this.displayValue16" (click)="openDialog('impressionAutomatique')" id="ImpressionAutomatique" class="form-control" />
                           <label class="form-label" for="NomServeurClient">Impression Automatique</label>
                         </div>
                       </div>
                       <div class="col">
                         <!-- Name input -->
                         <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="Chemindurepertoire" class="form-control" />
+                          <input type="text" [(ngModel)]="this.displayValue19" (click)="openDialog('cheminRepertoireTransfertUDPV')" id="Chemindurepertoire" class="form-control" />
                           <label class="form-label" for="Chemindurepertoire">Chemin du Répertoire TRANSFERTAUPDV</label>
                         </div>
                       </div>
@@ -159,13 +154,13 @@
                   <div class="row">
                     <div class="col">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="ImprimanteTicket" class="form-control" />
+                        <input type="text" [(ngModel)]="this.displayValue17" (click)="openDialog('imprimanteTicket')" id="ImprimanteTicket" class="form-control" />
                         <label class="form-label" for="ImprimanteTicket">Imprimante Ticket</label>
                       </div>
                 </div>
                 <div class="col">
                     <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="ImprimantePat" class="form-control" />
+                      <input type="text" [(ngModel)]="this.displayValue18" (click)="openDialog('imprimantePat')" id="ImprimantePat" class="form-control" />
                       <label class="form-label" for="ImprimantPat">Imprimante Pat</label>
                     </div>
               </div>
@@ -174,13 +169,13 @@
         <div class="row">
             <div class="col">
                 <div class="form-check form-switch switch">
-                    <input class="form-check-input" type="checkbox" id="CaissePrincipale">
+                    <input class="form-check-input" [(ngModel)]="newData.caissePrincipale" type="checkbox" id="CaissePrincipale">
                     <label class="form-check-label" for="CaissePrincipale">Caisse Principale</label>
                   </div>
             </div>
             <div class="col">
                 <div class="form-check form-switch switch">
-                    <input class="form-check-input" type="checkbox" id="CaisseCommande">
+                    <input class="form-check-input" [(ngModel)]="newData.caisseDeCommande" type="checkbox" id="CaisseCommande">
                     <label class="form-check-label" for="CaisseCommande">Caisse De Commande</label>
                   </div>
             </div>
@@ -192,7 +187,7 @@
             </div>
             <div class="col">
                 <div class="form-check form-switch switch">
-                    <input class="form-check-input" type="checkbox" id="RAPART">
+                    <input class="form-check-input" [(ngModel)]="newData.deuxiemeEcran" type="checkbox" id="RAPART">
                     <label class="form-check-label" for="RAPART">RAPART / 2</label>
                   </div>
             </div>
@@ -205,7 +200,7 @@
     <div class="panel panel-primary">
       <div class="panel-body">
         <h3 class="text-on-pannel text-primary"><strong class="text-uppercase">Agent Rècuperation</strong></h3>
-        <p-toggleButton  onLabel="Mode_Automatique" offLabel="Non" onIcon="bi-hand-thumbs-up" offIcon="bi bi-hand-thumbs-down" [style]="{ width: '10em' }"></p-toggleButton></div>
+        <p-toggleButton  [(ngModel)]="newData.agentRecuperation" onLabel="Mode_Automatique" offLabel="Non" onIcon="bi-hand-thumbs-up" offIcon="bi bi-hand-thumbs-down" [style]="{ width: '10em' }"></p-toggleButton></div>
     </div>
     <div>
     </div>

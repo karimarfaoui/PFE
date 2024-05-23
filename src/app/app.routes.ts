@@ -6,6 +6,8 @@ import { PaiementComponent } from './pages/configuration/paiement/paiement.compo
 import { ParametresComponent } from './pages/ficheParametre/parametres/parametres.component';
 import { ClientComponent } from './pages/client/client.component';
 import { PconnexionComponent } from './pages/ficheParametre/Pconnexion/pconnexion/pconnexion.component';
+import { PeriodiqueComponent } from './periodique/periodique.component';
+import { CaisseComponent } from './caisse/caisse.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -14,4 +16,7 @@ export const routes: Routes = [
     {path:'ficheparametre', component:ParametresComponent},
     {path:'client', component:ClientComponent},
     {path:'parameterdeconnexion',component:PconnexionComponent},
+    {path:'periodique' ,component:PeriodiqueComponent},
+    {path:'caisse',component:CaisseComponent},
+    {path:'sidebar',component:SidebarComponent}
 ];

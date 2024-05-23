@@ -1,4 +1,3 @@
-import { LoginService } from './../../login.service';
 import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,18 +11,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
   areItemsVisible: boolean = false;
   areItemsVisible2: boolean = false;
 
-  constructor(private loginService: LoginService) {}
 
-  ngOnInit() {
-    this.loginService.getLoggedIn().subscribe(() => {
-      this.isLoggedIn = true;
-    });
-  }
-
+ 
   authentification() {
     this.areItemsVisible = !this.areItemsVisible;
     console.log(this.areItemsVisible);

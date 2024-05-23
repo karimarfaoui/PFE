@@ -7,10 +7,10 @@
 <table class="table table-striped table-dark">
   <thead>
     <tr>
-        <td><button type="button" class="bi bi-keyboard btn ms-1 style-button" (click)="openDialog()">Clavier</button></td>
+        <td><button type="button" class="bi bi-keyboard btn ms-1 style-button" (click)="openDialog('entete1')">Clavier</button></td>
         <td><button type="button" class="bi bi-file-earmark-plus-fill btn ms-1 style-button">Rèindexation des fichiers</button></td>
         <td><button type="button" class="bi bi-trash3-fill btn ms-1 style-button">Supprimer Mot de passe </button></td>
-        <td><button type="button" class="bi bi-box-arrow-in-down btn ms-1 style-button">MAJ structure</button></td>
+        <td><button type="button" class="bi bi-box-arrow-in-down btn ms-1 style-button" (click)="onSubmit()">MAJ structure</button></td>
         <td><button type="button" class="bi bi-x-circle-fill btn ms-1 style-button">HCrèationSilnexistant</button></td>
         <td><button type="button" class="bi bi-files btn ms-1 style-button">Entete Facture</button></td>
     
@@ -22,18 +22,18 @@
     <tr colspan="6">
       <td colspan="3"><div class="input-group mt-3">
         <div class="input-group-prepend">
-              <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Entete 3 :</span>
+              <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Entete 1 :</span>
               </div>
-            <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input (click)="openDialog('entete1')" [(ngModel)]="this.displayValue1" type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
          </div></td>
       
     </tr>
     <tr colspan="6">
         <td colspan="3"><div class="input-group mt-3">
           <div class="input-group-prepend">
-                <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Entete 3 :</span>
+                <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Entete 2 :</span>
                 </div>
-              <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" (click)="openDialog('entete2')" [(ngModel)]="this.displayValue2" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
            </div></td>
         
       </tr>
@@ -42,7 +42,7 @@
           <div class="input-group-prepend">
                 <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Entete 3 :</span>
                 </div>
-              <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" (click)="openDialog('entete3')" [(ngModel)]="this.displayValue3" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
            </div></td>
         
       </tr>
@@ -51,7 +51,7 @@
           <div class="input-group-prepend">
                 <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Base page 1 :</span>
                 </div>
-              <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" (click)="openDialog('basePage1')" [(ngModel)]="this.displayValue4" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
            </div></td>
         
       </tr>
@@ -60,7 +60,7 @@
           <div class="input-group-prepend">
                 <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Base page 2 :</span>
                 </div>
-              <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" (click)="openDialog('basePage2')" [(ngModel)]="this.displayValue5" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
            </div></td>
         
       </tr>
@@ -69,38 +69,38 @@
         <div class="input-group-prepend">
               <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Code PV :</span>
               </div>
-            <input type="number" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="number" (click)="openDialog('codePV')" [(ngModel)]="this.displayValue6" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
          </div>
         </td>
       <td><div class="input-group mt-3">
         <div class="input-group-prepend">
               <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Masque Qte :</span>
               </div>
-            <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" (click)="openDialog('masqueCte')" [(ngModel)]="this.displayValue7" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
          </div></td>
       <td><div class="input-group mt-3">
         <div class="input-group-prepend">
               <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">N°Com AFFicheur:</span>
               </div>
-            <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" (click)="openDialog('nComAfficheur')" [(ngModel)]="this.displayValue8" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
          </div></td>
          <td><div class="input-group mt-3">
             <div class="input-group-prepend">
                   <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">N°COM TRE :</span>
                   </div>
-                <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" (click)="openDialog('nComTitle')" [(ngModel)]="this.displayValue9" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
              </div></td>
              <td><div class="input-group mt-3">
                 <div class="input-group-prepend">
                       <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Taux TVA :</span>
                       </div>
-                    <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" (click)="openDialog('tauxTVA')" [(ngModel)]="this.displayValue10" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                  </div></td>
                  <td><div class="input-group mt-3">
                     <div class="input-group-prepend">
                           <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Heure Fermeture</span>
                           </div>
-                        <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" (click)="openDialog('heureFermeture')" [(ngModel)]="this.displayValue11" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                      </div></td>
     </tr>
     <tr> 
@@ -108,13 +108,13 @@
             <div class="input-group-prepend">
                   <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Timbre :</span>
                   </div>
-                <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" (click)="openDialog('timbre')" [(ngModel)]="this.displayValue12" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
              </div></td>
              <td><div class="input-group mt-3">
                 <div class="input-group-prepend">
                       <span class="input-group-text bg" style="background-color: #6c767d;" id="inputGroup-sizing-default">Nomber Décimal :</span>
                       </div>
-                    <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" (click)="openDialog('montantPour1Point')" [(ngModel)]="this.displayValue13"  style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                  </div></td>
                  <td colspan="4">
                     <fieldset class="scheduler-border">
@@ -124,19 +124,19 @@
                             <div class="control-group">
                                 <label class="control-label input-label" for="startTime1">Montant pour 1 point :</label>
                                 <div class="controls bootstrap-timepicker">
-                                    <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="startTime1">
+                                    <input type="text" style="background-color: #6c767d;" (click)="openDialog('montantPour1Point')" [(ngModel)]="this.displayValue14" class="form-control" aria-label="Default" aria-describedby="startTime1">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label input-label" for="startTime2">Nbre point min :</label>
                                 <div class="controls bootstrap-timepicker">
-                                    <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="startTime2">
+                                    <input type="text" (click)="openDialog('nbrePointMin')" [(ngModel)]="this.displayValue15" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="startTime2">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label input-label" for="startTime3">Val point :</label>
                                 <div class="controls bootstrap-timepicker">
-                                    <input type="text" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="startTime3">
+                                    <input type="text" (click)="openDialog('valPoint')" [(ngModel)]="this.displayValue16" style="background-color: #6c767d;" class="form-control" aria-label="Default" aria-describedby="startTime3">
                                 </div>
                             </div>
                         </div>
@@ -424,44 +424,7 @@
           </div>
         </td>
     </tr>
-    <tr>
-        <td>
-            <div class="form-check form-switch  d-flex align-items-center">
-            <input class="form-check-input" type="checkbox" id="stock">
-            <label class="form-check-label" for="stock">Stock terme Matière Première</label>
-          </div>
-        </td>
-        <td>
-            <div class="form-check form-switch  d-flex align-items-center">
-            <input class="form-check-input" type="checkbox" id="Imp">
-            <label class="form-check-label" for="Imp">Imp CAB après vente</label>
-          </div>
-        </td>
-        <td>
-            <div class="form-check form-switch  d-flex align-items-center">
-            <input class="form-check-input" type="checkbox" id="ModiRetour">
-            <label class="form-check-label" for="ModiRetour">Modif Retour Article</label>
-          </div>
-        </td>
-        <td>
-            <div class="form-check form-switch  d-flex align-items-center">
-            <input class="form-check-input" type="checkbox" id="pasdecommande">
-            <label class="form-check-label" for="pasdecommande">Pas de Commande aprés Note</label>
-          </div>
-        </td>
-        <td>
-            <div class="form-check form-switch  d-flex align-items-center">
-            <input class="form-check-input" type="checkbox" id="ecran">
-            <label class="form-check-label" for="ecran">Gestion Ecran de commande</label>
-          </div>
-        </td>
-        <td>
-            <div class="form-check form-switch  d-flex align-items-center">
-            <input class="form-check-input" type="checkbox" id="codeabare">
-            <label class="form-check-label" for="codeabare">Code A Barre Ticket</label>
-          </div>
-        </td>
-    </tr>
+    
 
 
   </tbody>

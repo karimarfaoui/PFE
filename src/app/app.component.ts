@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  showSidebar: boolean = true;
+
+    
 }
