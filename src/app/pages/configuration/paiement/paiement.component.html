@@ -97,11 +97,11 @@
    
           <hr />
           <div class="btn-group footer d-flex justify-content-around"  role="group" aria-label="Basic outlined example">
-            <button type="button" class="bi bi-info-circle-fill btn ms-1 style-button">Aide</button>
+            <button type="button" class="bi bi-info-circle-fill btn ms-1 style-button" (click)="list()">Aide</button>
             <button type="button" class="bi bi-floppy2-fill btn ms-1 style-button" (click)="createData()">Enregister</button>
             <button type="button" class="bi bi-keyboard-fill btn ms-1 style-button" (click)="openDialog()">Clavier</button>
-            <button type="button" class="bi bi-trash-fill btn ms-1 style-button" (click)="reset()">Supprimer</button>
-            <button type="button" class="bi bi-ticket-detailed-fill btn ms-1 style-button">Ticker</button>
-            <button type="button" class="bi bi-x-circle-fill btn ms-1 style-button">fermer</button>
+            <button type="button" class="bi bi-trash-fill btn ms-1 style-button" (click)="deletep()">Supprimer</button>
+            <button type="button" class="bi bi-ticket-detailed-fill btn ms-1 style-button" (click)="updatep()">Update</button>
+            <button type="button" class="bi bi-x-circle-fill btn ms-1 style-button" routerLink="/" (click)="refresh()">fermer</button>
           </div>
 </div>

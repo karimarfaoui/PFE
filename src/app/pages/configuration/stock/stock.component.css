@@ -2,6 +2,7 @@
     color: rgba(233, 236, 239, .5);
     margin-top: -2%;
 }
+
 .sidebar-toggle:hover .hamburger,.sidebar-toggle:hover .hamburger:after,.sidebar-toggle:hover .hamburger:before{
     background:#3b7ddd}
     .hamburger-right,.hamburger-right:after,.hamburger-right:before{
@@ -75,10 +76,10 @@ li{
 .style-button{
     background-color: #6c757d ;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     color: black;
         margin-top: 5px;
         margin-bottom: 5px;
-    height: 60px;
+    height: 100px;
     width: 500px;
 }

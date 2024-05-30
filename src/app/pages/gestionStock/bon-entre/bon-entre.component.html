@@ -1,0 +1,19 @@
+<!-- bon-entre.component.html -->
+<div>
+    <h2>Ajouter un bon d'entrée</h2>
+    <input type="date" >
+    <form (ngSubmit)="onSubmit()">
+      <div *ngFor="let line of lines; let i = index">
+        <label for="code_pro_{{i}}">Code Pro:</label>
+        <input type="text" [(ngModel)]="line.code_pro" name="code_pro_{{i}}" (blur)="find(line)" required>
+        <label for="designation_{{i}}">Designation:</label>
+        <input type="text" [(ngModel)]="line.designation" name="designation_{{i}}" readonly>
+        <label for="qte_{{i}}">Quantity:</label>
+        <input type="number" [(ngModel)]="line.qte" name="qte_{{i}}" required>
+        <button type="button" (click)="removeLigne(i)">Remove</button>
+      </div>
+      <button type="button" (click)="addLigne()">Add Another Line</button>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

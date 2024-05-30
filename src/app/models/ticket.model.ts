@@ -1,5 +1,4 @@
 import { UUID } from "crypto";
-import { FLOAT } from "html2canvas/dist/types/css/property-descriptors/float";
 
 export interface Ticket {
     id: number;
@@ -12,4 +11,5 @@ export interface Ticket {
     prix: String;
     total: string;
     type_solde: number;
+    caissier: string | null;
 }

@@ -1,11 +1,23 @@
+import { Acces } from './../../models/acces.model';
+import { AccesService } from './../../@services/acces.service';
 
 import { CommonModule, NgIf } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild,} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, importProvidersFrom,} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, provideRouter } from '@angular/router';
 import Keyboard, { SimpleKeyboard } from 'simple-keyboard';
 import 'simple-keyboard/build/css/index.css';
 import Swal from 'sweetalert2';
+import { RefreshService } from '../../@services/refresh.service';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from '../../app.component';
+import { routes } from '../../app.routes';
+import { AuthService } from '../../@services/auth.service';
+
+
+
+
+
 
 @Component({
 
@@ -22,10 +34,13 @@ export class HomeComponent implements OnInit{
   logIn = false;
 
   @ViewChild('keyboardRef', { static: true }) keyboardRef: ElementRef | undefined;
-  inputValue: string = '';
+  password = ''; 
   keyboard: any;
   LoginService: any;
 
+  
+  
+  constructor(private acces: AccesService,private refreshService: RefreshService) { }
   ngOnInit() {
     this.keyboard = new Keyboard({
       onChange: input => this.onChange(input),
@@ -38,14 +53,15 @@ export class HomeComponent implements OnInit{
       },
       theme: "hg-theme-default"
     });
+    
   }
 
   onChange = (input: string) => {
     this.value = input;
-    this.inputValue = input;
+    this.password = input;
+
     console.log("Input changed", input);
   };
-
   onKeyPress = (button: string) => {
     console.log("Button pressed", button);
     if (button === "{shift}" || button === "{lock}") this.handleShift();
@@ -59,22 +75,32 @@ export class HomeComponent implements OnInit{
       layoutName: shiftToggle
     });
   };
-  onSubmit() { 
-    if (this.inputValue === '1') {
-      Swal.fire({
-        icon: 'success',
-        title: 'Welcome!',
-        showConfirmButton: false,
-        timer: 1500      });
-        this.LoginService.setLoggedIn(true);
 
-    }else {
+  login(password: number) {
+    this.acces.login(password).subscribe(res => {
+      console.log(res);
+      console.log('Login successful:', res);
+      this.acces.updateUser(res);  // Assuming updateUser is a method you will implement in AccesService
+      this.refreshService.requestRefresh();
+    }, error => {
+      console.error('Login failed:', error);
       Swal.fire({
         icon: 'error',
-        title: 'Oops...',
-        text: 'Password is incorrect!',
+        title: 'Login Failed',
+        text: 'Please check your credentials and try again.'
       });
-    }
+    });
   }
-
+  submit(){
+    this.login(Number(this.password));
+  
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Paiement ajouté avec succès',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+  
 }

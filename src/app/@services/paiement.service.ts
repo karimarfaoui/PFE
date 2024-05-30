@@ -15,5 +15,10 @@ export class PaiementService {
   createData(data:any):Observable<any>{
     return this.http.post(this.url,data);
   }
-
+  deleleteData(id:any):Observable<any>{
+    return this.http.delete(this.url+'/'+id);
+  }
+  updateData(id:any,newData:any):Observable<any>{
+    return this.http.put(this.url+'/'+id,newData);
+  }
 }

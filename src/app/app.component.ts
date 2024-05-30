@@ -4,6 +4,7 @@ import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/route
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { filter } from 'rxjs';
+import { AuthService } from './@services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
     throw new Error('Method not implemented.');
   }
   showSidebar: boolean = true;
+
 
     
 }

@@ -12,10 +12,12 @@ import { ArticleService } from '../../../@services/article.service';
 import { Article } from '../../../models/article.model';
 import { KeyboardValueService } from '../../../@services/keyboard-value.service';
 import { Subscription } from 'rxjs';
+import { Router } from 'express';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [NgIf,CheckboxModule,SelectButtonModule,FormsModule,ReactiveFormsModule,KeyboardComponent],
+  imports: [NgIf,CheckboxModule,SelectButtonModule,RouterLink,FormsModule,ReactiveFormsModule,KeyboardComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
@@ -40,7 +42,7 @@ export class ArticleComponent implements OnInit {
         this.displayValue2 = value;
       }
       else if(this.activeInput === 'prixDeVente1'){
-        this.displayValue3 = parseInt(value);
+        this.displayValue3 = Number(value); // Convert value to a number
       }
       else if(this.activeInput === 'prixDeVente2'){
         this.displayValue4 = parseInt(value);
@@ -54,7 +56,9 @@ export class ArticleComponent implements OnInit {
     this.articleForm = this.formBuilder.group({
       codeProduit: new FormControl(this.displayValue1, Validators.required),
       designation: new FormControl(this.displayValue2, Validators.required),
-      options: new FormControl('', Validators.required)
+      prixDeVente1: new FormControl(this.displayValue3, Validators.required),
+      prixDeVente2: new FormControl(this.displayValue4, Validators.required),
+      commentaire: new FormControl(this.dispalyValue5, Validators.required),
     });
   }
   updateForm() {
@@ -94,6 +98,8 @@ export class ArticleComponent implements OnInit {
   onSubmit() {
     this.newArticle.codeProduit = this.displayValue1;
     this.newArticle.designation = this.displayValue2;
+    this.newArticle.prixDeVente1 = this.displayValue3;
+    this.newArticle.prixDeVente2 = this.displayValue4;
     this.article.create(this.newArticle).subscribe({
       next: (newArticle) => {
         console.log('Article added:', newArticle);
@@ -168,4 +174,101 @@ export class ArticleComponent implements OnInit {
   onSousGroupeChange(value: string) {
     this.newArticle.sousGroupe = value;
   }
+
+data: any[] = [];  // Array to hold the fetched data
+
+findAlldata() {
+  this.article.findAll().subscribe(posts => {
+    this.data = posts;  // Store the fetched data
+    console.log(posts);
+    this.findButton();  // Call the function to display SweetAlert after data is fetched
+  });
+}
+
+  findButton() {
+    Swal.fire({
+      title: 'Voici les données',
+      html:this.formatData(),
+      icon: 'info',
+      width:800,
+      showConfirmButton: false,
+      confirmButtonText: 'Fermer'
+  });
+}
+formatData() {
+  let html =`<table style="width:100%;">
+  <tr>
+    <th>Code Produit</th>
+    <th>Designation</th>
+    <th>groupe</th>
+    <th>sousGroupe</th>
+    <th>famille</th>
+    <th>sousfamille</th>
+    <th>Prix de vente 1</th>
+    <th>Prix de vente 2</th>
+  </tr>`;
+  
+ 
+  
+  this.data.forEach(item => {
+    html += `<tr>
+      <td>${item.codeProduit}</td>
+      <td>${item.designation}</td>
+      <td>${item.groupe}</td>
+      <td>${item.sousGroupe}</td>
+      <td>${item.famille}</td>
+      <td>${item.sousfamille}</td>
+      <td>${item.displayValue3}</td>
+      <td>${item.prixVente2}</td>
+$    </tr>`;
+  });
+
+  html += `</table>`;
+  return html;
+}
+deleteArticle(code: any) {
+  this.article.delete(code).subscribe({
+    next: (response) => {
+      console.log('Article deleted:', response);
+      Swal.fire({
+        title: 'Article supprimé avec succès!',
+        text: '',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        }
+      });
+    },
+    error: (error) => {
+      console.error('Error deleting article:', error);
+      Swal.fire({
+        title: 'Erreur lors de la suppression de l\'article',
+        text: '',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
+  });
+
+}
+deletebutton() {
+  Swal.fire({
+    title: 'Voulez-vous supprimer cet article?',
+    icon: 'warning',
+    html: `<strong>Insérer le code du produit:</strong>
+    <input type="text" id="code" class="swal2-input" placeholder="Code Produit">
+    `,
+    showCancelButton: true,
+    confirmButtonText: 'Oui',
+    cancelButtonText: 'Non',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const code = (document.getElementById('code') as HTMLInputElement).value;
+      this.deleteArticle(code);
+    }
+  });
+}
+
 }

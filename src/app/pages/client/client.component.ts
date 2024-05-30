@@ -102,6 +102,72 @@ export class ClientComponent implements OnInit {
       }
     });
   }
+
+  list(){
+    
+    this.client.fetchData().subscribe({
+      next: (data) => {
+        Swal.fire({
+          title: 'Détails du client',
+          html: this.formatPaymentData(data),
+          icon: 'info',
+          width: '60%',
+          confirmButtonText: 'Fermer'
+        });
+      },
+      error: (error) => {
+        console.error('There was an error!', error);
+      }
+    });
+  }private formatPaymentData(data: any[]): string {
+    return `
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Code de client</th>
+            <th>Libellé de name</th>
+            <th>Libellé de téléphone</th>
+            <th>Type de Carte</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map((payment: { 
+            code_client: any; 
+            client_name: any; 
+            client_tel: any;
+            type_carte: boolean;
+            type_fidelite: boolean; 
+            type_credit: boolean;  
+            type_prix2: boolean;
+            type_fidelete_point: boolean;
+            type_type7: boolean;
+            type_type8: boolean;
+            type_vente: boolean;
+          }) => {
+            return `
+              <tr>
+                <td>${payment.code_client}</td>
+                <td>${payment.client_name}</td>
+                <td>${payment.client_tel}</td>
+                <td>
+                  ${payment.type_carte ? 'Sans Carte' : ''}
+                  ${payment.type_fidelite ? 'Fidélité' : ''}
+                  ${payment.type_credit ? 'Crédit' : ''}
+                  ${payment.type_prix2 ? 'Prix2' : ''}
+                  ${payment.type_fidelete_point ? 'Fidélité Point' : ''}
+                  ${payment.type_type7 ? 'Type7' : ''}
+                  ${payment.type_type8 ? 'Type8' : ''}
+                  ${payment.type_vente ? 'Vente' : ''}
+                </td>
+              </tr>
+             
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+  
 }
 
 /*
@@ -124,4 +190,4 @@ export class ClientComponent implements OnInit {
       type_type8: this.type_type8,
       type_vente: this.type_vente,
       type_solde: this.type_solde,
-      type_ancien_solde: this.type_ancien_solde,*/
+      type_ancien_solde: this.type_ancien_solde,*//*  */

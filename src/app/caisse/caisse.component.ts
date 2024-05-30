@@ -12,6 +12,7 @@ import { RouterLink, RouterModule, NavigationEnd } from '@angular/router';
 import { Ticket } from '../models/ticket.model';
 import { TiketsService } from '../@services/tikets.service';
 import { CaisseClient } from '../models/client.model';
+import { nextTick } from 'process';
 
 @Component({
   selector: 'app-caisse',
@@ -178,25 +179,46 @@ export class CaisseComponent implements OnInit {
       );
     }
   }
-
+  //------ get data form local storage ------
+  getCaissierNameFromLocalStorage(): string {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      try {
+        const parsedData = JSON.parse(userData);
+        if (parsedData.user && parsedData.user.caissier) {
+          console.log(parsedData.user.caissier); // Logging to ensure correct retrieval
+          return parsedData.user.caissier;
+        } else {
+          console.error('caissier field is missing in userData');
+          return '';
+        }
+      } catch (error) {
+        console.error('Error parsing userData from localStorage', error);
+        return '';
+      }
+    }
+    console.warn('No userData found in localStorage');
+    return '';
+  }
+  
   // ------ Create Ticket ------
   ticket: Ticket[] = [];
   createt(): void {
     const newTicket = {
-      designation:
-        this.articlesID.map((article) => article.designation).join(', ') ||
-        'General Inquiry',
+      
+      designation: this.articlesID.map((article) => article.designation).join(', ') || 'General Inquiry',
       clientName: this.client ? this.client.client_name : '',
       type_solde: this.client ? this.client.type_solde : 0, // Add null check
       quantity: this.quantities.join(', '),
       prix: this.articlesID.map((article) => article.prixDeVente1).join(', '),
       total: this.getTotalCost().toString(),
       isActive: this.activeButton,
+      caissier: this.getCaissierNameFromLocalStorage(), // Use a method to get caissier name
     };
-
-    // Push the new ticket to the tickets array
-    this.ticket.push();
-
+  
+    console.log('New Ticket:', newTicket);
+  
+  
     // Send the last added ticket to the server
     this.TicketService.setTicket(newTicket).subscribe({
       next: () => {
@@ -244,7 +266,7 @@ export class CaisseComponent implements OnInit {
   }
 
   showReceipt() {
-    if(this.activeButton == 'Cash' || this.activeButton == 'creditCard' || this.activeButton == 'TPE' || this.activeButton == 'BonAchat' || this.activeButton == 'PayPal' || this.activeButton == 'BankTransfer'){
+    if(this.activeButton == 'Cash' || this.activeButton == 'TPE' || this.activeButton == 'BonAchat' ){
     this.fontRecu += this.getTotalCost();
     const tableHTML = this.generateTableHTML();
     this.createt();
@@ -277,6 +299,9 @@ export class CaisseComponent implements OnInit {
       <div id="receipt">
         <div class="header">
           <h2>CASH RECEIPT</h2>
+        </div>
+        <div>Caissier Name:
+        <b>${this.getCaissierNameFromLocalStorage()}</b>
         </div>
         <div class="info">
           <p>Address: Lorem ipsum, Q10</p>

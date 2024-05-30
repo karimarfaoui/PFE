@@ -1,0 +1,68 @@
+.bre {
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    color: #222e3c; /* Text color set to the hex code you provided */
+    font-family: 'Arial', sans-serif; /* Setting a common font family */
+}
+
+/* Styles for the table and its elements */
+.table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapses border to single line */
+}
+
+.table th,
+.table td {
+    text-align: left; /* Aligning text to the left */
+    padding: 8px; /* Padding around text */
+    border-bottom: 1px solid #ddd; /* Light grey border for each row */
+}
+
+.thead-dark {
+    background-color: #222e3c; /* Dark background for the header */
+    color: white; /* White text for contrast */
+}
+
+/* Styling for inputs within the table */
+.table input {
+    width: 100%; /* Make input take full cell width */
+    padding: 5px; /* Padding inside input */
+    border: 1px solid #222e3c; /* Border for inputs */
+    border-radius: 3px; /* Slightly rounded borders for aesthetics */
+}
+
+/* Button styling */
+button {
+    background-color: #222e3c; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No borders */
+    padding: 10px 20px; /* Padding around the text */
+    text-align: center; /* Centering text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Aligns button inline */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Additional classes for specific adjustments */
+.d-flex {
+    display: flex; /* Flex display */
+    justify-content: center; /* Centering content */
+    align-items: center; /* Align items in the center vertically */
+}
+
+.justify-content-around {
+    justify-content: space-around; /* Space around items */
+}
+
+.mt-3 {
+    margin-top: 1rem; /* Margin top of 1rem */
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+}

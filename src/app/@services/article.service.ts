@@ -23,4 +23,20 @@ export class ArticleService {
   findById(id: number): Observable<Article[]> {
     return this.http.get<Article[]>(this.url + '/findOne/' + id);
   }
+ 
+  delete(code_pro:any):Observable<any>{
+    return this.http.delete(this.url+'/'+code_pro);
+  }
+  find(code_pro:any):Observable<any>{
+    return this.http.get(this.url+'/'+code_pro);
+  }
+  update():Observable<any>{
+    return this.http.put(this.url+'/', {});
+  }
+  updateData(code_pro:any, newData:any):Observable<any>{
+    return this.http.put(this.url+'/'+code_pro, newData);
+  }
+  findAll(): Observable<any[]> {
+    return this.http.get<any[]>(this.url + '/');
+  }
 }

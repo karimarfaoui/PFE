@@ -1,0 +1,109 @@
+
+
+
+
+
+<span class="d-flex justify-content-center  heading fs-1">Access</span>
+
+<div class="container form" >
+    <span class=""></span>
+  
+    <div class="group mt-4">
+        <div class="input-group">
+            <span class="bi bi-person-fill input-group-text" id="inputGroup-sizing-default">
+            </span>
+            <input type="number" [(ngModel)]="newData.id" placeholder="id" class="form-control input"  name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+            </div><br>
+      <div class="input-group">
+        <span class="bi bi-person-fill input-group-text" id="inputGroup-sizing-default">
+        </span>
+        <input type="text" [(ngModel)]="newData.caissier" placeholder="Caissier" class="form-control input"  name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+        </div><br>
+        <div class="input-group">
+          <span class="bi bi-shield-lock-fill input-group-text" id="inputGroup-sizing-default">
+          </span>
+          <input type="password" [(ngModel)]="newData.password" placeholder="Password" class="form-control input"   name="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+          </div>  
+    </div> 
+  
+    <div class="">
+       
+      <div class="check ">
+        <div>
+          <label>
+             <div class="form-check form-switch switch">
+                  <input class="form-check-input"  (change)="selectAll($event)" type="checkbox" >
+                  <label class="form-check-label" >Select All</label>
+                </div>        
+          </label>
+          <label class="form-check form-switch switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="newData.encaissement" [(ngModel)]="encaissement"> Encaissement
+          </label>
+          <label class="form-check form-switch switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="newData.rapport" [(ngModel)]="rapport"> Rapport
+          </label>
+          <label class="form-check form-switch switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="newData.raz" [(ngModel)]="raz"> Remise à Zéro
+          </label>
+          <label class="form-check form-switch switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="newData.rap_period" [(ngModel)]="rap_period"> Rapport Périodique
+          </label >
+          <label class="form-check form-switch switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="newData.configuration" [(ngModel)]="configuration"> Configuration
+          </label >
+          <label class="form-check form-switch switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="newData.annul_art" [(ngModel)]="annul_art"> Annulation Article
+          </label>
+          
+          
+          </div>
+          <div class="sidecheck">
+            <label class="form-check form-switch switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="newData.annul_tick" [(ngModel)]="annul_tick"> Annulation Ticket
+            </label>
+              <label class="form-check form-switch switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="newData.prelevement" [(ngModel)]="prelevement"> Prélévement
+            </label>
+              <label class="form-check form-switch switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="newData.liste_tick" [(ngModel)]="liste_tick"> Liste Tickets
+            </label>
+              <label class="form-check form-switch switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="newData.remise" [(ngModel)]="remise"> Remise
+            </label>
+            <label class="form-check form-switch switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="newData.pay_offre" [(ngModel)]="pay_offre"> Payement Offre
+            </label>
+              <label class="form-check form-switch switch">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="newData.sc" [(ngModel)]="sc"> Sortie de Caisse
+            </label>
+            
+          </div>
+        
+            <div class="">
+              <fieldset class="side mt-5">
+                <legend>Type</legend>
+               
+                <div class="form-check form-switch switch">
+                  <input class="form-check-input" [(ngModel)]="newData.admin" type="checkbox" id="admin">
+                  <label class="form-check-label" for="admin">Admin</label>
+                </div>             
+                <div class="form-check form-switch switch">
+                  <input class="form-check-input" [(ngModel)]="newData.caissierr" type="checkbox" id="caissier">
+                  <label class="form-check-label" for="caissier">Caissier</label>
+                </div>              </fieldset>
+                
+            </div>
+            
+      </div>
+      </div>
+      <hr />
+<div class="d-flex justify-content-around  mt-3 d-flex justify-content-center">
+    <button class="btn ms-1 bi bi-info-circle-fill style-button bare" (click)="showTableInSwal()">Aide</button>
+    <button class="btn ms-1 bi bi-floppy2-fill style-button bare" (click)="updateOneAcces()">Enregistrer</button>
+    <button class="btn ms-1 bi bi-trash-fill style-button bare" (click)="deleteButton()" >Supprimer</button>
+    <button routerLink="/configuration" class="btn ms-1 bi bi-x-circle-fill style-button bare" routerLInk="/" (click)="fermerButton()" >Fermer</button>
+    <button class="btn ms-1 bi bi-keyboard-fill style-button bare" routerLink="/acces">Retour</button>
+    
+</div>
+
+  </div>

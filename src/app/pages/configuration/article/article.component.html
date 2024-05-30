@@ -93,13 +93,11 @@
             <option value="Coques et Étuis">Coques et Étuis</option>
           </select>
           <span class="bi bi-plus-square-fill fs-1 m-1"></span>
-
-          <select
+                  <select
             class="custom-select"
             [(ngModel)]="newArticle.sousfamille"
             data-mdb-select-init
           >
-            <option selected disabled>Sous Famille</option>
             <option value="Find X5">Find X5</option>
             <option value="Find X3">Find X3</option>
             <option value="Reno7">Reno7</option>
@@ -157,25 +155,7 @@
                 aria-describedby="inputGroup-sizing-default"
               />
             </div>
-            <div class="input-group m-3">
-              <div class="input-group-prepend">
-                <span
-                  class="input-group-text"
-                  id="inputGroup-sizing-default"
-                  style="background-color: #6c767d"
-                  >Commentarie</span
-                >
-              </div>
-              <input
-              (click)="openDialog('commentaire')"
-                type="text"
-                [(ngModel)]="this.dispalyValue5"
-                class="form-control"
-                aria-label="Default"
-                style="background-color: #6c767d"
-                aria-describedby="inputGroup-sizing-default"
-              />
-            </div>
+          
           </div>
           <div>
             <select
@@ -184,10 +164,10 @@
               data-mdb-select-init
             >
               <option selected disabled>TVA</option>
-              <option value="19">Taux standard : 19%</option>
-              <option value="13">Taux réduit : 13%</option>
+              <option value="19">TVA : 19%</option>
+              <option value="13">TVA : 13%</option>
 
-              <option value="6">Taux super réduit : 6%</option>
+              <option value="6">TVA : 6%</option>
             </select>
           </div>
         </div>
@@ -209,7 +189,7 @@
           </div>
           <div class=" ">
             <div class="mt-2">
-              <div
+              <!-- <div
                 class="btn-group"
                 role="group"
                 aria-label="Basic checkbox toggle button group"
@@ -307,7 +287,7 @@
                 <label class="btn btn-outline-primary" for="btncheck8"
                   >Article gratuit</label
                 >
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -319,7 +299,7 @@
         >
           <button
             type="button"
-            class="bi bi-info-circle-fill btn ms-1 style-button"
+            class="bi bi-info-circle-fill btn ms-1 style-button" (click)="findAlldata()"
           >
             Liste Article
           </button>
@@ -337,7 +317,7 @@
           >
             Clavier
           </button>
-          <button type="button" class="bi bi-trash-fill btn ms-1 style-button">
+          <button type="button" class="bi bi-trash-fill btn ms-1 style-button" (click)="deletebutton()">
             Supprimer
           </button>
           <button
